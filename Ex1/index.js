@@ -1,4 +1,7 @@
 var arrayNumeros = [];
+var arrayPares = [];
+var arrayImpares = [];
+var result = 0;
 
 function getNum() {
     var numero = document.getElementById("num").value;
@@ -16,8 +19,6 @@ function getNum() {
     console.log(arrayNumeros);
     // console.log(numero);
 }
-var arrayPares = [];
-var arrayImpares = [];
 
 function getResult() {
     var num;
@@ -38,23 +39,58 @@ function getResult() {
     }
     sumarPar();
     sumarImpar();
-    restaTotal();
-    
+    // restaTotal();
+    result = sumarPar() - sumarImpar();   
+    console.log("Resultado Final "+ result)
+    document.getElementById("result").value = result;
+    cargarNumeros();
 }
 function sumarPar(){
 
     const sumaPar = arrayPares.reduce(function(a, b){return parseInt(a) + parseInt(b);},);
     console.log(sumaPar);
+    return parseInt(sumaPar);
 }
 function sumarImpar(){
 
     const sumaImpar = arrayImpares.reduce(function(a, b){return parseInt(a) + parseInt(b);});
     console.log(sumaImpar);
+    return parseInt(sumaImpar);
 }
-function restaTotal( sumaPar, sumaImpar){
-    console.log(sumaPar);
-    console.log(sumaImpar);
+
+//TAREA #2
+
+function cargarNumeros(){
+    document.getElementById('selectNum').innerHTML = "";
+    for (var i in arrayNumeros){
+        document.getElementById('selectNum').innerHTML += "<option value=='"+arrayNumeros[i]+"'>"+arrayNumeros[i]+"</option>";
+    } 
+}
+
+function borrarNumero(){
+    var arrayActua =[];
+    let num = document.getElementById('selectNum').value;
+    console.log("numerosSelct"+num);
+    // parseInt(num);
+    console.log("parseao: "+num);
+    var defNum  = num.split(/(\d)/);
+    var defdefNUM = defNum[1]
     
-    resta = parseInt(sumaPar) - parseInt(sumaImpar)
-    console.log("Reault total"+parseInt(resta));
+
+   
+
+   console.log(defdefNUM);
+    
+    
+    // let num2 = parseInt(num);
+    // console.log(num2);
+
+    var index = arrayNumeros.indexOf(defdefNUM);
+    console.log(index);
+    arrayActua = arrayNumeros.splice(index, 1);
+    
+    console.log(arrayNumeros);
+   
+  cargarNumeros()  
 }
+
