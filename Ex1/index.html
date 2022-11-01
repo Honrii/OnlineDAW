@@ -3,27 +3,29 @@
 <head>
     <title>Even vs Odd</title>
     <script src="index.js"> </script>
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
     <h1>Even vs Odd</h1>
-    <main>
-        <div>
-            <input id="num" type="number" />
-            <button id="add" onclick="getNum()">Add</button>
-        </div>
-        <div>
-            <textarea id="numbersToSum"></textarea>
-            <button id="getResult" onclick="getResult()">Get the result</button>
-            <input id="result" type="number" />
-        </div>
-        <div>
-            <select name="number" id="selectNum">
-                <option type="number">Numero</option>
-            </select>
-            <button id="eliminar" onclick="borrarNumero()">Remove</button>
-         </div>
-    </main>
+        <main class="w3-container w3-card-4 w3-light-grey">
+            <div>
+                <input id="num" type="number" />
+                <button id="add" onclick="getNum()">Add</button>
+            </div>
+            <div>
+                <textarea id="numbersToSum"></textarea> <br><br>
+                <button id="getResult" onclick="getResult()">Get the result</button>
+                <input id="result" type="number" /> <br>
+            </div>
+            <div>
+                <select name="number" id="selector">
+                    <option type="number">Numero</option>
+                </select>
+                <button id="eliminar" class="btn" onclick="deleteNum()">DELETE</button>
+             </div>
+        </main>
 </body>
 
 </html>

@@ -1,0 +1,3 @@
+class FrenchDeck extends Deck {
+   
+}
