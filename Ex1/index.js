@@ -1,3 +1,6 @@
+
+//TAREA #1
+
 var arrayNumeros = [];
 var arrayPares = [];
 var arrayImpares = [];
